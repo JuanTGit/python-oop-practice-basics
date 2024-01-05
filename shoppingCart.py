@@ -19,15 +19,18 @@ class Cart():
             self.my_cart.pop(item)
     
     def show_cart(self):
+        count = 1
         if not self.my_cart:
             print('Your cart is empty!')
             return
         print('General Store')
         print('=============')
         for item, value in self.my_cart.items():
-            print(f'{item}: ${value}')
+            print(f'{count}. {item}: ${value}')
+            count += 1
         print('=============')
         print(f'Total: ${self.total}')
+        print(f'Total Items: {count - 1}')
         print('_____________')
 
 
