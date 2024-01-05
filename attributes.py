@@ -69,5 +69,48 @@ emp_2 = Employee('Sherley', 'Ly', 100000)
 
 emp_2.change_last_name('Tejeda')
 
-emp_1.apply_raise()
+# emp_1.apply_raise()
 
+class Album:
+	company = 'Dreamville Records'
+
+	def __init__(self, title, artist, release_year, song_list=[]):
+		self.title = title
+		self.artist = artist
+		self.release_year = release_year
+		self.song_list = song_list
+	
+	def add_song(self, song):
+		self.song_list.append(song)
+		# print(f'{song.name} is playing for {song.length}')
+	
+	def play_album(self):
+		for song in self.song_list:
+			print(f'{song.name} is playing {song.length} remaining...')
+
+
+class Song:
+
+	def __init__(self, name, length, features=None):
+		self.name = name
+		self.length = length
+		self.features = features
+
+class Artist:
+
+	def __init__(self, name):
+		self.name = name
+
+song1 = Song('Intro', '2:09')
+song2 = Song('January 28th', '4:02')
+song3 = Song('A Tale of 2 Citiez', '4:29')
+
+cole = Artist('J. Cole')
+
+fhd = Album('2014 Forest Hills Drive', cole, 2014)
+
+fhd.add_song(song1)
+fhd.add_song(song2)
+fhd.add_song(song3)
+
+print(fhd.artist.name)
