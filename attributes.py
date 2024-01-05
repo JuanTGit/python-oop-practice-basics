@@ -28,7 +28,18 @@ dream_car = Car('Porsche', '911 GT3 RS', 'Red')
 juans_car = Car('Volkswagen', 'Jetta', 'White')
 sherleys_car = Car('Toyota', 'Corolla', 'Dark Blue')
 
+# getattr, setattr, delattr
+	# print(getattr(dream_car, 'model'))
+	# setattr(dream_car, 'owner', 'Juan')
+	# print(dream_car.__dict__)
+	# delattr(dream_car, 'owner')
+	# print(dream_car.__dict__)
 
+class Test:
 
-dream_car.drive(100)
-dream_car.gas_station(20)
+	def __init__(self, **kwargs):
+		for key, value in kwargs.items():
+			setattr(self, key, value)
+
+my_test = Test(name="Test", age=27, hometown='Houston')
+
