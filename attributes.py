@@ -43,3 +43,31 @@ class Test:
 
 my_test = Test(name="Test", age=27, hometown='Houston')
 
+class Employee:
+	raise_amount = 1.05
+
+	def __init__(self, first, last, salary):
+		self.first = first
+		self.last = last
+		self.salary = salary
+		self.email = (first + '.' + last + '@company.org').lower()
+
+	def full_name(self):
+		return f'{self.first} {self.last}'
+
+	def change_last_name(self, last_name):
+		self.last = last_name
+		self.email = (self.first + "." + self.last + '@company.org').lower()
+		print(f'{self.first} {self.last} Updated. {self.email} Updated.')
+
+	def apply_raise(self):
+		self.salary = int(self.salary * self.raise_amount)
+		print(f'{self.full_name()} is now making {self.salary}')
+
+emp_1 = Employee('Juan', 'Tejeda', 100000)
+emp_2 = Employee('Sherley', 'Ly', 100000)
+
+emp_2.change_last_name('Tejeda')
+
+emp_1.apply_raise()
+
