@@ -23,15 +23,15 @@ class Cart():
         if not self.my_cart:
             print('Your cart is empty!')
             return
-        print('General Store')
-        print('=============')
+        print('\tGeneral Store')
+        print('==============================')
         for item, value in self.my_cart.items():
-            print(f'{count}. {item}: ${value}')
+            print(f'\t{count}. {item}: ${value}')
             count += 1
-        print('=============')
-        print(f'Total: ${self.total}')
-        print(f'Total Items: {count - 1}')
-        print('_____________')
+        print('==============================')
+        print(f'\tTotal: ${self.total}')
+        print(f'\tTotal Items: {count - 1}')
+        print('______________________________')
 
 
 def run():
