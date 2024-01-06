@@ -4,6 +4,12 @@ class Animal:
         self.animal_type = animal_type
         self.energy = energy
 
+    def __str__(self):
+        return f'{self.animal_type.name}, Energy: {self.energy}, Age: {self.animal_type.age}'
+
+    def __repr__(self):
+        return f'<Animal | {self.animal_type} {self.energy}>'
+    
     def eat(self, amount):
         if self.energy == 100:
             return f'{self.animal_type.name} is full!'
@@ -50,11 +56,8 @@ dog_odin = Animal(odin)
 dog_teddy = Animal(teddy)
 dog_panda = Animal(panda)
 
-print(dog_odin.play(10))
-print(dog_odin.sleep(130))
-print(dog_odin.eat(20))
+# print(dog_teddy.play(20))
+# print(dog_teddy.sleep(20))
 
-
-
-
-
+print(dog_odin)
+dog_odin
